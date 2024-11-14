@@ -6,6 +6,9 @@
     <title>Tienda de Productos Electrónicos</title>
     <link rel="stylesheet" href="ESTILO/css/style.css">
     <script src="ESTILO/js/main.js" defer></script>
+    <!-- Enlace a Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 <body>
     <header>
@@ -49,9 +52,10 @@
         <!-- Carrito de compras -->
         <div class="carrito-container">
             <div class="carrito-icono" id="carrito-icono">
-                <img src="carrito-icono.png" alt="Carrito de compras">
-                <span id="cantidad-carrito">0</span>
+              <i class="bi bi-cart" style="font-size: 1.5rem;"></i> <!-- Ícono de carrito Bootstrap -->
+              <span id="cantidad-carrito">0</span>
             </div>
+        
             <div class="carrito-panel" id="carrito-panel">
                 <h3>Carrito de compras</h3>
                 <ul id="lista-carrito"></ul>
