@@ -60,6 +60,12 @@ main {
   margin: 0 auto 10px; /* Centra la imagen horizontalmente y agrega 10px de margen inferior */
 }
 
+/* Modificación para descripción del producto */
+.producto p {
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  text-align: justify; /* Texto justificado */
+  color: #666; /* Color gris opcional para diferenciar */
+}
 /* Estilos para el pie de página */
 footer {
   background-color: #333; /* Fondo oscuro */
