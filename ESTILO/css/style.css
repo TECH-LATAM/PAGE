@@ -71,7 +71,7 @@ footer {
 /* Contenedor del carrito */
 .carrito-container {
   position: fixed; /* Fija el carrito en la pantalla al hacer scroll */
-  top: 20%; /* Posiciona el carrito en el centro vertical */
+  top: 50%; /* Posiciona el carrito en el centro vertical */
   right: 0; /* Coloca el carrito en el borde derecho */
   transform: translateY(-50%); /* Centra verticalmente el carrito */
   background-color: #fff; /* Fondo blanco */
