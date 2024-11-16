@@ -1,124 +1,63 @@
-/* Establece el estilo general de la fuente y elimina márgenes y padding */
 body {
-  font-family: Arial, sans-serif; /* Fuente predeterminada Arial, o sans-serif si no está disponible */
-  margin: 0; /* Elimina margen de la página */
-  padding: 0; /* Elimina padding de la página */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilos para el encabezado */
 header {
-  background-color: #333; /* Fondo oscuro para el encabezado */
-  color: #fff; /* Texto en blanco */
-  padding: 20px; /* Espaciado interno de 20px alrededor del contenido */
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Estilos para la lista de navegación dentro del encabezado */
-header nav ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el padding de la lista */
-}
-
-/* Estilos para los elementos de la lista de navegación */
-header nav ul li {
-  display: inline; /* Hace que los elementos de la lista aparezcan en una sola línea */
-  margin-right: 20px; /* Añade espacio de 20px a la derecha de cada elemento */
-}
-
-/* Estilos para los enlaces dentro de la lista de navegación */
-header nav ul li a {
-  color: #fff; /* Color blanco para el texto de los enlaces */
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-}
-
-/* Estilos para el contenido principal */
 main {
-  padding: 20px; /* Espaciado interno de 20px alrededor del contenido principal */
+  padding: 20px;
 }
 
-/* Estilos para el contenedor de productos */
+.productos-seccion {
+  margin-bottom: 40px; /* Espacio entre secciones */
+}
+
+.productos-seccion h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left; /* Alineación del título */
+  border-bottom: 2px solid #ccc; /* Línea decorativa debajo del título */
+  padding-bottom: 10px;
+}
+
 .productos {
-  display: flex; /* Usa flexbox para organizar los productos */
-  flex-wrap: wrap; /* Permite que los productos se ajusten en varias filas */
-  gap: 10px; /* Espacio de 10px entre productos */
-  justify-content: center; /* Centra los productos horizontalmente */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* Estilos para cada producto individual */
 .producto {
-  width: 250px; /* Ancho fijo de 250px */
-  margin: 10px; /* Espaciado externo de 10px alrededor de cada producto */
-  padding: 10px; /* Espaciado interno de 10px dentro de cada producto */
-  border: 1px solid #ccc; /* Borde gris claro */
-  text-align: center; /* Centra el contenido dentro de cada producto */
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
-/* Estilos para la imagen de cada producto */
 .producto img {
-  height: 150px; /* Altura fija de 150px */
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarse */
-  display: block; /* Hace que la imagen se comporte como un bloque */
-  margin: 0 auto 10px; /* Centra la imagen horizontalmente y agrega 10px de margen inferior */
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-/* Modificación para descripción del producto */
 .producto p {
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  text-align: justify; /* Texto justificado */
-  color: #666; /* Color gris opcional para diferenciar */
+  font-size: 14px;
+  text-align: justify;
+  color: #666;
 }
-/* Estilos para el pie de página */
+
 footer {
-  background-color: #333; /* Fondo oscuro */
-  color: #fff; /* Texto en blanco */
-  text-align: center; /* Centra el contenido de texto */
-  padding: 10px; /* Espaciado interno de 10px */
-}
-
-/* Contenedor del carrito */
-.carrito-container {
-  position: fixed; /* Fija el carrito en la pantalla al hacer scroll */
-  top: 50%; /* Posiciona el carrito en el centro vertical */
-  right: 0; /* Coloca el carrito en el borde derecho */
-  transform: translateY(-50%); /* Centra verticalmente el carrito */
-  background-color: #fff; /* Fondo blanco */
-  border-left: 1px solid #ccc; /* Borde izquierdo para separar visualmente */
-  z-index: 1000; /* Asegura que el carrito esté en la capa superior */
-  /*width: 300px; /* Ancho fijo de 300px */
-}
-
-/* Icono del carrito */
-.carrito-icono {
-  padding: 10px 20px; /* Espaciado interno para el ícono */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
-  background-color: #f0f0f0; /* Fondo gris claro */
-  display: flex; /* Usa flexbox para alinear el ícono */
-  align-items: center; /* Alinea el contenido verticalmente en el centro */
-}
-
-/* Panel del carrito (contenido escondido) */
-.carrito-panel {
-  display: none; /* Esconde el panel inicialmente */
-  padding: 10px; /* Espaciado interno para el contenido del carrito */
-}
-
-/* Panel del carrito cuando está visible */
-.carrito-panel.mostrar {
-  display: block; /* Muestra el panel cuando está activo */
-}
-
-/* Estilos para los elementos de la lista en el carrito */
-#lista-carrito li {
-  margin-bottom: 10px; /* Espacio de 10px entre cada elemento del carrito */
-  display: flex; /* Flexbox para alinear el contenido */
-  justify-content: space-between; /* Alinea el nombre del producto y el botón a los extremos */
-}
-
-/* Botón de eliminación en el carrito */
-#lista-carrito li button {
-  margin-left: auto; /* Empuja el botón de eliminación hacia la derecha */
-}
-
-/* Cambia el cursor al pasar sobre el botón de agregar al carrito */
-button.agregar-carrito:hover {
-  cursor: pointer; /* Muestra un puntero en el botón de agregar */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 }
