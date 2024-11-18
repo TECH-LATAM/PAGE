@@ -1,3 +1,4 @@
+// Write JavaScript here
 const carrito = [];
 const carritoPanel = document.getElementById("carrito-panel");
 const listaCarrito = document.getElementById("lista-carrito");
@@ -27,17 +28,34 @@ function agregarAlCarrito(nombre, precio) {
 }
 
 function actualizarCarrito() {
-    listaCarrito.innerHTML = "";
+    listaCarrito.innerHTML = ""; // Limpia la lista actual
     let total = 0;
+
     carrito.forEach(item => {
+        // Crear el elemento <li>
         const li = document.createElement("li");
-        li.innerHTML = `${item.nombre} - ${item.cantidad} x $${item.precio} <button onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>`;
+        li.classList.add("item-carrito"); // Clase para estilos específicos
+
+        // Estructura del contenido dentro del <li>
+        li.innerHTML = `
+            <div class="producto">
+                <p1>${item.nombre}</p1><p1>${item.cantidad} x $${item.precio}</p1>
+            </div>
+            <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+        `;
+
+        // Agregar el <li> a la lista
         listaCarrito.appendChild(li);
+
+        // Calcular el total
         total += item.precio * item.cantidad;
     });
+
+    // Actualizar el total y la cantidad de productos
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
     cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
+
 
 function eliminarDelCarrito(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
@@ -60,3 +78,4 @@ function enviarWhatsApp() {
     const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
+

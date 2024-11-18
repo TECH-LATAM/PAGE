@@ -105,21 +105,59 @@ footer {
   display: none; /* Esconde el panel inicialmente */
   padding: 10px; /* Espaciado interno para el contenido del carrito */
 }
+#carrito-panel {
+  max-height: 300px; /* Altura máxima del panel */
+  overflow-y: auto; /* Activa el scroll vertical si el contenido excede la altura */
+  border: 1px solid #ccc; /* Agrega un borde para delimitar visualmente el panel */
+  padding: 10px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Color de fondo suave */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombras para un mejor diseño */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
 /* Panel del carrito cuando está visible */
 .carrito-panel.mostrar {
   display: block; /* Muestra el panel cuando está activo */
 }
-/* Estilos para los elementos de la lista en el carrito */
-#lista-carrito li {
-  margin-bottom: 10px; /* Espacio de 10px entre cada elemento del carrito */
-  display: flex; /* Flexbox para alinear el contenido */
-  justify-content: space-between; /* Alinea el nombre del producto y el botón a los extremos */
+
+/* Elimina márgenes y padding del contenedor de la lista */
+/* Estilo para la lista dentro del carrito */
+#lista-carrito {
+  list-style: none; /* Quita los puntos de la lista */
+  margin: 0; /* Sin margen externo */
+  padding: 0; /* Sin relleno interno */
 }
-/* Botón de eliminación en el carrito */
-#lista-carrito li button {
-  margin-left: auto; /* Empuja el botón de eliminación hacia la derecha */
-}
+
+
+
 /* Cambia el cursor al pasar sobre el botón de agregar al carrito */
 button.agregar-carrito:hover {
   cursor: pointer; /* Muestra un puntero en el botón de agregar */
+}
+/* Contenedor de cada elemento del carrito */
+#lista-carrito li.item-carrito {
+  display: flex; /* Flexbox para organizar */
+  justify-content: space-between; /* Separar producto y botón */
+  align-items: center; /* Alinear verticalmente */
+  margin-bottom: 10px; /* Espacio entre productos */
+}
+
+/* Subcontenedor para los detalles del producto */
+#lista-carrito .producto {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Coloca nombre y precio en columnas */
+}
+
+/* Botón de eliminar */
+#lista-carrito .eliminar {
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#lista-carrito .eliminar:hover {
+  background-color: #ff4444;
 }
