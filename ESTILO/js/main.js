@@ -56,7 +56,7 @@ function actualizarCarrito() {
 
     // Actualizar el total y la cantidad de productos
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
-    cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cantidadCarrito.textContent = '... ' + carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
 
 
