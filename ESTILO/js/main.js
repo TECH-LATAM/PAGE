@@ -39,9 +39,12 @@ function actualizarCarrito() {
         // Estructura del contenido dentro del <li>
         li.innerHTML = `
             <div class="producto">
-                <p1>${item.nombre}</p1><p1>${item.cantidad} x $${item.precio}</p1>
+                <h5>${item.nombre}</h5><p1>${item.cantidad} x $${item.precio}</p1>
             </div>
-            <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+            <div>
+                <button class="aumentar" onclick="aumentarCantidad('${item.nombre}')">  Agregar</button>
+                <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
+            </div>
         `;
 
         // Agregar el <li> a la lista
@@ -54,6 +57,15 @@ function actualizarCarrito() {
     // Actualizar el total y la cantidad de productos
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
     cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+}
+
+
+function aumentarCantidad(nombre) {
+    const producto = carrito.find(item => item.nombre === nombre);
+    if (producto) {
+        producto.cantidad++;
+    }
+    actualizarCarrito();
 }
 
 
@@ -78,4 +90,3 @@ function enviarWhatsApp() {
     const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
-

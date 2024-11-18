@@ -135,7 +135,31 @@ footer {
 #lista-carrito .producto {
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
+
+#lista-carrito .producto h5{
+  margin-top: 5px; /* Margen superior reducido */
+}
+
+
+#lista-carrito .aumentar {
+  background-color: #4caf50; /* Verde para "aumentar" */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+#lista-carrito .aumentar:hover {
+  background-color: #45a049;
+}
+
+
+
 
 #lista-carrito .eliminar {
   background-color: #ff6666;
@@ -144,6 +168,7 @@ footer {
   border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
+  margin-left: 25px;
 }
 
 #lista-carrito .eliminar:hover {
@@ -152,5 +177,7 @@ footer {
 
 /* Buttons */
 button.agregar-carrito:hover {
-  cursor: pointer;
+  cursor: pointer; 
+  background-color: #a4ebeb;
+
 }
