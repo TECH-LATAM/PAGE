@@ -140,6 +140,10 @@ main {
   margin-top: 5px;
 }
 
+#lista-carrito .producto{
+  border-radius: 4px;
+}
+
 #lista-carrito .aumentar,
 #lista-carrito .eliminar {
   background-color: #4caf50;
@@ -166,6 +170,7 @@ button.agregar-carrito:hover {
   cursor: pointer;
   background-color: #a4ebeb;
 }
+
 
 #cantidad-carrito {
   display: inline-block;
