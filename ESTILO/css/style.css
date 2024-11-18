@@ -72,14 +72,6 @@ main {
   color: #666;
 }
 
-/* Footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
 /* Cart container */
 .carrito-container {
   position: fixed;
@@ -91,13 +83,24 @@ footer {
   z-index: 1000;
 }
 
-/* Cart icon */
 .carrito-icono {
   padding: 10px 20px;
   cursor: pointer;
   background-color: #f0f0f0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.carrito-icono i {
+  flex-grow: 0;
+}
+
+.espacio {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 10px;
 }
 
 /* Cart panel */
@@ -110,15 +113,14 @@ footer {
   background-color: #f9f9f9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  font-size: 14px; /* Reducir el tamaño del texto */
+  font-size: 14px;
 }
 
 .carrito-panel.mostrar {
   display: block;
-  width: 300px; /* Reducir el ancho */
+  width: 300px;
 }
 
-/* Cart list */
 #lista-carrito {
   list-style: none;
   margin: 0;
@@ -132,52 +134,46 @@ footer {
   margin-bottom: 10px;
 }
 
-#lista-carrito .producto {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
+#lista-carrito .producto h5 {
+  margin-top: 5px;
 }
 
-#lista-carrito .producto h5{
-  margin-top: 5px; /* Margen superior reducido */
-}
-
-
-#lista-carrito .aumentar {
-  background-color: #4caf50; /* Verde para "aumentar" */
+#lista-carrito .aumentar,
+#lista-carrito .eliminar {
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
-  margin-left: 25px;
 }
 
 #lista-carrito .aumentar:hover {
   background-color: #45a049;
 }
 
-
-
-
 #lista-carrito .eliminar {
   background-color: #ff6666;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: 25px;
 }
 
 #lista-carrito .eliminar:hover {
   background-color: #ff4444;
 }
 
-/* Buttons */
 button.agregar-carrito:hover {
-  cursor: pointer; 
+  cursor: pointer;
   background-color: #a4ebeb;
+}
 
+#cantidad-carrito {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: yellow;
+  color: black;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+  border: 2px solid black;
 }
