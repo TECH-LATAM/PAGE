@@ -1,3 +1,4 @@
+// Write JavaScript here
 const carrito = [];
 const carritoPanel = document.getElementById("carrito-panel");
 const listaCarrito = document.getElementById("lista-carrito");
@@ -27,28 +28,37 @@ function agregarAlCarrito(nombre, precio) {
 }
 
 function actualizarCarrito() {
-    listaCarrito.innerHTML = "";
+    listaCarrito.innerHTML = ""; // Limpia la lista actual
     let total = 0;
 
     carrito.forEach(item => {
+        // Crear el elemento <li>
         const li = document.createElement("li");
-        li.classList.add("item-carrito");
+        li.classList.add("item-carrito"); // Clase para estilos específicos
+
+        // Estructura del contenido dentro del <li>
         li.innerHTML = `
             <div class="producto">
-                <h5>${item.nombre}</h5><p>${item.cantidad} x $${item.precio}</p>
+                <h5>${item.nombre}</h5><p1>${item.cantidad} x $${item.precio}</p1>
             </div>
             <div>
-                <button class="aumentar" onclick="aumentarCantidad('${item.nombre}')">Agregar</button>
+                <button class="aumentar" onclick="aumentarCantidad('${item.nombre}')">  Agregar</button>
                 <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
             </div>
         `;
+
+        // Agregar el <li> a la lista
         listaCarrito.appendChild(li);
+
+        // Calcular el total
         total += item.precio * item.cantidad;
     });
 
+    // Actualizar el total y la cantidad de productos
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
     cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
+
 
 function aumentarCantidad(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
@@ -57,6 +67,7 @@ function aumentarCantidad(nombre) {
     }
     actualizarCarrito();
 }
+
 
 function eliminarDelCarrito(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
@@ -69,11 +80,13 @@ function eliminarDelCarrito(nombre) {
 }
 
 function enviarWhatsApp() {
-    const numero = "+593963311000"; // Número de WhatsApp
+    const numero = "+593963311000"; // Reemplaza con el número de WhatsApp
     let mensaje = `Hola! Aquí está tu carrito:\n\n`;
     carrito.forEach(item => {
-        mensaje += `${item.nombre} - ${item.cantidad} x $${item.precio}\n`;
+        mensaje += `*${item.nombre}* - ${item.cantidad} x $${item.precio}\n`;
     });
-    mensaje += `\nTotal: $${totalDisplay.textContent.split(' ')[1]}`;
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+    mensaje += `\n*Total: $${total.toFixed(2)}*`;
+    const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
 }
