@@ -49,15 +49,59 @@ main {
   margin: 0 auto 10px;
 }
 
+/* Modificación para descripción del producto */
 .producto p {
-  font-size: 14px;
-  text-align: justify;
-  color: #666;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  text-align: justify; /* Texto justificado */
+  color: #666; /* Color gris opcional para diferenciar */
+}
+/* Estilos para el pie de página */
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto en blanco */
+  text-align: center; /* Centra el contenido de texto */
+  padding: 10px; /* Espaciado interno de 10px */
+}
+/* Contenedor del carrito */
+.carrito-container {
+  position: fixed; /* Fija el carrito en la pantalla al hacer scroll */
+  top: 50%; /* Posiciona el carrito en el centro vertical */
+  right: 0; /* Coloca el carrito en el borde derecho */
+  transform: translateY(-50%); /* Centra verticalmente el carrito */
+  background-color: #fff; /* Fondo blanco */
+  border-left: 1px solid #ccc; /* Borde izquierdo para separar visualmente */
+  z-index: 1000; /* Asegura que el carrito esté en la capa superior */
+  /*width: 300px; /* Ancho fijo de 300px */
+}
+/* Icono del carrito */
+.carrito-icono {
+  padding: 10px 20px; /* Espaciado interno para el ícono */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+  background-color: #f0f0f0; /* Fondo gris claro */
+  display: flex; /* Usa flexbox para alinear el ícono */
+  align-items: center; /* Alinea el contenido verticalmente en el centro */
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
+/* Panel del carrito (contenido escondido) */
+.carrito-panel {
+  display: none; /* Esconde el panel inicialmente */
+  padding: 10px; /* Espaciado interno para el contenido del carrito */
+}
+/* Panel del carrito cuando está visible */
+.carrito-panel.mostrar {
+  display: block; /* Muestra el panel cuando está activo */
+}
+/* Estilos para los elementos de la lista en el carrito */
+#lista-carrito li {
+  margin-bottom: 10px; /* Espacio de 10px entre cada elemento del carrito */
+  display: flex; /* Flexbox para alinear el contenido */
+  justify-content: space-between; /* Alinea el nombre del producto y el botón a los extremos */
+}
+/* Botón de eliminación en el carrito */
+#lista-carrito li button {
+  margin-left: auto; /* Empuja el botón de eliminación hacia la derecha */
+}
+/* Cambia el cursor al pasar sobre el botón de agregar al carrito */
+button.agregar-carrito:hover {
+  cursor: pointer; /* Muestra un puntero en el botón de agregar */
 }
