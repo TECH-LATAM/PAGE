@@ -1,4 +1,4 @@
-const productos2 = [
+const productosproximos = [
     { 
         nombre: "LOVELEDI - 15000 mAh", 
         precio: 29.99, 
@@ -87,6 +87,21 @@ function cargarProductos() {
             agregarAlCarrito(nombre, precio);
             actualizarCarrito();
         });
+    });
+}
+
+function cargarProductosProximos() {
+    const contenedorProductosProximos = document.getElementById("productosProximos");
+    productosproximos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+            <img src="${productosproximos.img}" alt="${productosproximos.nombre}">
+            <h5>${productosproximos.nombre}</h5>
+            <p>Precio: $${productosproximos.precio.toFixed(2)}</p>
+            <p><strong>Descripción:</strong> ${productosproximos.descripcion}</p>
+        `;
+        contenedorProductosProximos.appendChild(div);
     });
 }
 
