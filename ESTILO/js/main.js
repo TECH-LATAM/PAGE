@@ -3,7 +3,7 @@ const productos2 = [
         nombre: "LOVELEDI - 15000 mAh", 
         precio: 30, 
         img: "https://m.media-amazon.com/images/I/61EUFa99OtL._AC_UF1000,1000_QL80_FMwebp_.jpg", 
-        descripcion: "Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
+        descripcion: "Pack x2 Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
     },
     { 
         nombre: "JIGA - 30000 mAh", 
