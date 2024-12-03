@@ -191,10 +191,24 @@ background-color: #a4ebeb;
 
 
 /* Footer */
+html, body {
+  height: 100%;  /* Aseguramos que el body ocupe toda la altura de la página */
+  margin: 0;     /* Elimina los márgenes por defecto */
+  position: relative; /* Necesario para que el footer se posicione de manera absoluta */
+}
+
+#contenido {
+  padding: 20px;
+  margin-bottom: 60px; /* Deja espacio para el footer */
+}
+
 footer {
-background-color: #333;
-color: #fff;
-text-align: center;
-padding: 10px;
+  position: absolute;  /* El pie de página se posiciona de manera absoluta */
+  bottom: 0;           /* Se coloca en la parte inferior */
+  width: 100%;         /* Asegura que ocupe todo el ancho */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
