@@ -45,7 +45,7 @@ const productos = [
         descripcion:"SG90 Servo motor micro 9g 360 degree mount SG90 "
     },
     {
-        nombre: "360",  
+        nombre: "Motoreductor DC",  
         precio: 2, 
         img: "https://http2.mlstatic.com/D_NQ_NP_2X_734121-MEC74251876976_022024-F.webp", 
         descripcion:"Mgsystem Motor Reductor Motorreductor Biaxial Arduino Robot"
