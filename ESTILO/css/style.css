@@ -190,10 +190,11 @@ background-color: #a4ebeb;
 
 
 
+
 /* Footer */
 
 footer {
-  position: absolute;  /* El pie de página se posiciona de manera absoluta */
+
   bottom: 0;           /* Se coloca en la parte inferior */
   width: 100%;         /* Asegura que ocupe todo el ancho */
   background-color: #333;
@@ -201,4 +202,3 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
