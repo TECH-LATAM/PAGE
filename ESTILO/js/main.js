@@ -1,4 +1,4 @@
-const productos = [
+const productos2 = [
     { 
         nombre: "LOVELEDI - 15000 mAh", 
         precio: 29.99, 
@@ -23,6 +23,40 @@ const productos = [
         img: "https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg", 
         descripcion: "Cargador portátil premium, diseño elegante y alta capacidad para dispositivos de alta carga."
     },
+    {
+        nombre: "Ruedas omnidireccionales",  
+        precio: 12, 
+        img: "https://avelectronics.cc/wp-content/uploads/2021/12/ma006-1.jpg", 
+        descripcion:"Par De Ruedas Llantas Omnidireccionales 60mm"
+    },
+];
+
+const productos = [
+    {
+        nombre: "Ruedas omnidireccionales",  
+        precio: 12, 
+        img: "https://avelectronics.cc/wp-content/uploads/2021/12/ma006-1.jpg", 
+        descripcion:"Par De Ruedas Llantas Omnidireccionales 60mm"
+    },
+    {
+        nombre: "ESP32-CAM",  
+        precio: 12, 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_894956-MEC54959362481_042023-F.webp", 
+        descripcion:"ESP32-CAM ESP32-CAM-MB MICRO USB ESP32 Serial to WiFi ESP32 CAM Development Board CH340 CH340G 5V Bluetooth+OV2640 Camera"
+    },
+    {
+        nombre: "SG90 Servo motor micro 9g 360",  
+        precio: 2, 
+        img: "https://ae-pic-a1.aliexpress-media.com/kf/Seaafa79b597b4c668412b98af6a46b36l/2-5-10-20pcs-SG90-Servo-motor-micro-9g-180-360-degree-mount-SG90-kit-without.jpg_.webp", 
+        descripcion:"SG90 Servo motor micro 9g 360 degree mount SG90 kit without metal gear pro RC Car Toy Airplane Arduino UNO DIY"
+    },
+    {
+        nombre: "Moto reductor DC",  
+        precio: 2, 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_734121-MEC74251876976_022024-F.webp", 
+        descripcion:"Mgsystem Motor Reductor Motorreductor Biaxial Arduino Robot"
+    },
+
 ];
 
 const carrito = [];
