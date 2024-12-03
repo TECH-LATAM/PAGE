@@ -4,98 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Productos Electrónicos</title>
-    <link rel="stylesheet" href="ESTILO/css/style.css">
-    <script src="ESTILO/js/main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
     <header id="main-header">
-	
-        <h1>Tu tienda de productos electrónicos</h1> <!-- / #logo-header -->
-    
-    </header><!-- / #main-header -->
+        <h1>Tu tienda de productos electrónicos</h1>
+    </header>
 
     <main>
-        <!-- Productos destacados y Accesorios -->
+        <!-- Productos destacados -->
         <section class="productos-seccion">
             <h2>Productos Destacados</h2>
-            <div class="productos">
-                <!-- Producto Reutilizable -->
-                <!-- Usa una función para crear productos dinámicamente en JS -->
-
-<!-- Productos -->
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/61EUFa99OtL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Producto 1">
-                    <h3>LOVELEDI Pack 2 - 15000 mAh</h3>
-                    <p>2 Cargadores portátiles de 15000 mAh Dual USB Power Bank Output 5V-3.1A Compatible con teléfonos inteligentes.</p>
-                    <p>Precio: $29.99</p>
-                    <button class="agregar-carrito" data-nombre="LOVELEDI - 15000 mAh" data-precio="29.99">Añadir al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/61YbQo+JqJL._AC_SX569_.jpg" alt="Producto 2">
-                    <h3>JIGA - 30000 mAh</h3>
-                    <p>Cargador de energía de carga rápida con 3 salidas y 2 entradas y linterna, batería externa de alta capacidad compatible con iPhone, Samsung, iPad, etc</p>
-                    <p>Precio: $34.99</p>
-                    <button class="agregar-carrito" data-nombre="JIGA - 30000 mAh" data-precio="34.99">Añadir al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/61VU+ZfA3kL._AC_SX679_.jpg" alt="Producto 3">
-                    <h3>TOZO - 20000 mAh</h3>
-                    <p>Cargador portátil con capacidad de carga rápida, batería externa de alta velocidad de carga de 18 W, con entrada/salida USB-C, compatible con iPhone, Samsung, etc.</p>
-                    <p>Precio: $29.99</p>
-                    <button class="agregar-carrito" data-nombre="TOZO - 20000 mAh" data-precio="29.99">Añadir al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg" alt="Producto 4">
-                    <h3>INIU - 20000 mAh</h3>
-                    <p> Cargador portátil, 22.5 W 20000 mAh USB C entrada y salida cargador rápido, PD 3.0+QC 4.0 pantalla LED paquete de batería compatible con iPhone 16 15 14 13 Pro Samsung S23 Google iPad Tablet, etc.</p>
-                    <p>Precio: $49.99</p>
-                    <button class="agregar-carrito" data-nombre="INIU - 20000 mAh" data-precio="49.99">Añadir al carrito</button>
-                </div>
+            <div class="productos" id="productos">
+                <!-- Productos generados dinámicamente -->
             </div>
         </section>
-
-        <!-- Sección: Productos destacados -->
-        <section class="productos-seccion">
-            <h2>Accesorios</h2>
-            <div class="productos">
-                <!-- Productos -->
-                <div class="producto">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/He8b14ec02d4440c4bad31d5871fcc20bd/M-dulo-de-aumento-de-potencia-USB-Cable-adaptador-convertidor-USB-enchufe-de-2-1x5-5mm.jpg_.webp" alt="Producto 5">
-                    <h3>Adaptador Módem WiFi</h3>
-                    <p> Módulo de aumento de potencia USB, Cable adaptador, convertidor USB, enchufe de 2,1x5,5mm, línea de refuerzo de 5V a 12V - 1A.</p>
-                    <p>Precio: $4.99</p>
-                    <button class="agregar-carrito" data-nombre="Adaptador WiFi" data-precio="4.99">Añadir al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S402ee32460264536a7b0d510d735be26R/ESMARTER-COB-Luz-de-trabajo-port-til-USB-recargable-luz-de-reparaci-n-de-emergencia-fuente.jpg_.webp" alt="Producto 6">
-                    <h3>ESMARTER COB </h3>
-                    <p>Luz de trabajo portátil USB recargable luz de reparación de emergencia fuente de luz móvil linterna.</p>
-                    <p>Precio: $14.99</p>
-                    <button class="agregar-carrito" data-nombre="ESMARTER COB" data-precio="14.99">Añadir al carrito</button>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Carrito de compras -->
-        <div class="carrito-container">
-            <div class="carrito-icono" id="carrito-icono">
-                <i class="bi bi-cart" style="font-size: 1.5rem;"></i>
-                <span class="espacio"></span>
-                <span id="cantidad-carrito">0</span>
-            </div>
-            <div class="carrito-panel" id="carrito-panel">
-                <ul id="lista-carrito"></ul>
-                <p id="total">Total: $0.00</p>
-                <button id="whatsapp" onclick="enviarWhatsApp()">Enviar a WhatsApp</button>
-            </div>
-        </div>
     </main>
 
+    <!-- Carrito -->
+    <div class="carrito-container">
+        <div id="carrito-icono" class="carrito-icono">
+            <i class="bi bi-cart4"></i>
+            <span class="espacio">Carrito</span>
+            <span id="cantidad-carrito">0</span>
+        </div>
+        <div id="carrito-panel" class="carrito-panel">
+            <ul id="lista-carrito"></ul>
+            <p id="total">Total: $0.00</p>
+            <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Tu tienda de productos electrónicos</p>
+        <p>© 2024 Tienda Electrónica. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>

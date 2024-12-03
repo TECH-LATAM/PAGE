@@ -1,152 +1,41 @@
-/************ 
-//--------------------------------
-// GENERAL
-//-------------------------------
-************/
+/* General Styles */
 body {
-	margin: 0;
-	padding: 0;
-	font-family: Helvetica, Arial, sans-serif;
-	color: #666;
-	background: #f2f2f2; 
-	font-size: 1em;
-	line-height: 1em;
-	padding-top: 80px;
-}
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #f2f2f2;
+  color: #666;
+  padding-top: 65px;
+} 
+#main-header {
+background: #333;
+color: white;
+height: 65px;
+
+width: 100%;
+left: 0;
+top: 0;
+position: fixed;
+}	
 
 h1 {
-	font-size: 2.3em;
-  line-height: 1.3em;
-	margin: 15px 0;
-	text-align: center;
-	font-weight: 300;
+  text-align: center;
+  font-weight: 300;
+  margin: 15px 0;
 }
 
-p {
-	margin: 0 0 1.5em 0;
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-
-/************ 
-//-------------------------------
-// CABECERA
-//-------------------------------
-************/
-#main-header {
-	background: #333;
-	color: white;
-	height: 80px;
-	
-	width: 100%;
-	left: 0;
-	top: 0;
-	position: fixed;
-}	
-	#main-header a {
-		color: white;
-	}
-	
-	
-
-	#logo-header:hover {
-		color: #0b76a6;
-	}
-	
-	#logo-header .site-name {
-		display: block;
-		font-weight: 700;
-		font-size: 1.2em;
-	}
-	
-	#logo-header .site-desc {
-		display: block;
-		font-weight: 300;
-		font-size: 0.8em;
-		color: #999;
-	}
-	
-
-/*
- * Navegación
- */
-nav {
-	float: right;
-}
-	nav ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		padding-right: 20px;
-	}
-	
-		nav ul li {
-			display: inline-block;
-			line-height: 80px;
-		}
-			
-			nav ul li a {
-				display: block;
-				padding: 0 10px;
-				text-decoration: none;
-			}
-			
-				nav ul li a:hover {
-					background: #0b76a6;
-				}
-	
-
-
-
-/************ 
-//------------------------------
-// CONTENIDO
-//------------------------------
-************/
-#main-content {
-	background: white;
-	width: 90%;
-	max-width: 800px;
-	margin: 20px auto;
-	box-shadow: 0 0 10px rgba(0,0,0,.1);
-}
-
-	#main-content header,
-	#main-content .content {
-		padding: 40px;
-	}
-	
-
-
-
-
-
-
-
-
-
-
-
-/* Main content */
 main {
   padding: 20px;
-}
-
-.productos-seccion {
-  margin-bottom: 40px;
 }
 
 .productos-seccion h2 {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: left;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #000;
   padding-bottom: 10px;
 }
+
 
 .productos {
   display: flex;
@@ -154,144 +43,158 @@ main {
   gap: 10px;
   justify-content: center;
 }
-
 .producto {
-  width: 250px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
+width: 250px;
+margin: 10px;
+padding: 10px;
+border: 1px solid #ccc;
+text-align: center;
+background-color: #ffffff; 
+} 
+
 
 .producto img {
+  width: 100px;
   height: 100px;
   object-fit: cover;
-  display: block;
-  margin: 0 auto 10px;
 }
 
 .producto p {
-  font-size: 14px;
-  text-align: justify;
-  color: #666;
+  font-size: 12px;
+  color: #000;
 }
 
-/* Cart container */
+button.agregar-carrito {
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.agregar-carrito:hover {
+  background: #0056b3;
+}
+
+
+
+/* Carrito */
 .carrito-container {
   position: fixed;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background-color: #fff;
+  background: white;
   border-left: 1px solid #ccc;
   z-index: 1000;
+  padding: 10px;
   border-radius: 10px;
 }
+
 
 .carrito-icono {
-  padding: 8px 10px;
-  cursor: pointer;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
+padding: 8px 10px;
+cursor: pointer;
+background-color: #f0f0f0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-radius: 10px;
 }
 
+#cantidad-carrito {
+  background: yellow;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-left: 10px;
+}
 .carrito-icono i {
-  flex-grow: 0;
+flex-grow: 0;
 }
 
 .espacio {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 0 10px;
+flex-grow: 1;
+text-align: center;
+font-size: 1.2rem;
+padding: 0 10px;
 }
+
+
 
 /* Cart panel */
 .carrito-panel {
-  display: none;
-  padding: 5px;
-  max-height: 300px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  font-size: 14px;
+display: none;
+padding: 5px;
+max-height: 300px;
+overflow-y: auto;
+border: 1px solid #ccc;
+background-color: #f9f9f9;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+font-size: 14px;
 }
-
 .carrito-panel.mostrar {
-  display: block;
-  width: 300px;
+display: block;
+width: 300px;
 }
 
 #lista-carrito {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+list-style: none;
+margin: 0;
+padding: 0;
 }
 
+
 #lista-carrito li.item-carrito {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
 }
 
 #lista-carrito .producto h5 {
-  margin-top: 5px;
-}
-
-#lista-carrito .producto{
-  border-radius: 4px;
+margin-top: 5px;
+}#lista-carrito .producto{
+border-radius: 4px;
 }
 
 #lista-carrito .aumentar,
 #lista-carrito .eliminar {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
+background-color: #4caf50;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 5px 5px;
+cursor: pointer;
 }
 
 #lista-carrito .aumentar:hover {
-  background-color: #45a049;
+background-color: #45a049;
 }
 
 #lista-carrito .eliminar {
-  background-color: #ff6666;
+background-color: #ff6666;
 }
 
 #lista-carrito .eliminar:hover {
-  background-color: #ff4444;
+background-color: #ff4444;
 }
 
 button.agregar-carrito:hover {
-  cursor: pointer;
-  background-color: #a4ebeb;
+cursor: pointer;
+background-color: #a4ebeb;
 }
 
 
-#cantidad-carrito {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: yellow;
-  color: black;
-  text-align: center;
-  line-height: 25px;
-  font-weight: bold;
-  border: 2px solid black;
-}
+
 /* Footer */
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px;
 }
+

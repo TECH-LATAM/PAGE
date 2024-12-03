@@ -1,42 +1,81 @@
-// Write JavaScript here
-const carrito = [];
-const carritoPanel = document.getElementById("carrito-panel");
-const listaCarrito = document.getElementById("lista-carrito");
-const totalDisplay = document.getElementById("total");
-const cantidadCarrito = document.getElementById("cantidad-carrito");
+const productos = [
+    { 
+        nombre: "LOVELEDI - 15000 mAh", 
+        precio: 29.99, 
+        img: "https://m.media-amazon.com/images/I/61EUFa99OtL._AC_UF1000,1000_QL80_FMwebp_.jpg", 
+        descripcion: "Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
+    },
+    { 
+        nombre: "JIGA - 30000 mAh", 
+        precio: 34.99, 
+        img: "https://m.media-amazon.com/images/I/61YbQo+JqJL._AC_SX569_.jpg", 
+        descripcion: "Cargador portátil con capacidad de 30000 mAh, compatible con smartphones y tablets."
+    },
+    { 
+        nombre: "TOZO - 20000 mAh", 
+        precio: 29.99, 
+        img: "https://m.media-amazon.com/images/I/61VU+ZfA3kL._AC_SX679_.jpg", 
+        descripcion: "Powerbank ultradelgado con carga rápida, diseño compacto y liviano de 20000 mAh. "
+    },
+    { 
+        nombre: "INIU - 20000 mAh",  
+        precio: 49.99, 
+        img: "https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg", 
+        descripcion: "Cargador portátil premium, diseño elegante y alta capacidad para dispositivos de alta carga."
+    },
+];
 
-document.querySelectorAll(".agregar-carrito").forEach(boton => {
-    boton.addEventListener("click", () => {
-        const nombre = boton.dataset.nombre;
-        const precio = parseFloat(boton.dataset.precio);
-        agregarAlCarrito(nombre, precio);
-        actualizarCarrito();
+const carrito = [];
+const listaCarrito = document.getElementById("lista-carrito");
+const carritoPanel = document.getElementById("carrito-panel");
+const cantidadCarrito = document.getElementById("cantidad-carrito");
+const totalDisplay = document.getElementById("total");
+
+function cargarProductos() {
+    const contenedorProductos = document.getElementById("productos");
+    productos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+            <img src="${producto.img}" alt="${producto.nombre}">
+            <h5>${producto.nombre}</h5>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <p><strong>Descripción:</strong> ${producto.descripcion}</p>
+            <button class="agregar-carrito" data-nombre="${producto.nombre}" data-precio="${producto.precio}">Añadir al carrito</button>
+        `;
+        contenedorProductos.appendChild(div);
     });
-});
+
+    document.querySelectorAll(".agregar-carrito").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const nombre = btn.dataset.nombre;
+            const precio = parseFloat(btn.dataset.precio);
+            agregarAlCarrito(nombre, precio);
+            actualizarCarrito();
+        });
+    });
+}
 
 document.getElementById("carrito-icono").addEventListener("click", () => {
     carritoPanel.classList.toggle("mostrar");
 });
 
 function agregarAlCarrito(nombre, precio) {
-    const productoExistente = carrito.find(item => item.nombre === nombre);
-    if (productoExistente) {
-        productoExistente.cantidad++;
+    const producto = carrito.find(item => item.nombre === nombre);
+    if (producto) {
+        producto.cantidad++;
     } else {
         carrito.push({ nombre, precio, cantidad: 1 });
     }
 }
 
 function actualizarCarrito() {
-    listaCarrito.innerHTML = ""; // Limpia la lista actual
+    listaCarrito.innerHTML = "";
     let total = 0;
 
     carrito.forEach(item => {
-        // Crear el elemento <li>
         const li = document.createElement("li");
         li.classList.add("item-carrito"); // Clase para estilos específicos
-
-        // Estructura del contenido dentro del <li>
         li.innerHTML = `
             <div class="producto">
                 <h5>${item.nombre}</h5><p1>${item.cantidad} x $${item.precio}</p1>
@@ -46,20 +85,13 @@ function actualizarCarrito() {
                 <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
             </div>
         `;
-
-        // Agregar el <li> a la lista
         listaCarrito.appendChild(li);
-
-        // Calcular el total
         total += item.precio * item.cantidad;
     });
 
-    // Actualizar el total y la cantidad de productos
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
     cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
-
-
 function aumentarCantidad(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
     if (producto) {
@@ -80,13 +112,15 @@ function eliminarDelCarrito(nombre) {
 }
 
 function enviarWhatsApp() {
-    const numero = "+593963311000"; // Reemplaza con el número de WhatsApp
-    let mensaje = `Hola! Aquí está tu carrito:\n\n`;
+    const numero = "+593963311000";
+    let mensaje = "Carrito de compras:\n\n";
     carrito.forEach(item => {
-        mensaje += `*${item.nombre}* - ${item.cantidad} x $${item.precio}\n`;
+        mensaje += `${item.nombre} - ${item.cantidad} x $${item.precio.toFixed(2)}\n`;
     });
     const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-    mensaje += `\n*Total: $${total.toFixed(2)}*`;
+    mensaje += `\nTotal: $${total.toFixed(2)}`;
     const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
+
+cargarProductos();
