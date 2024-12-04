@@ -6,17 +6,17 @@ body {
   background: #f2f2f2;
   color: #666;
   padding-top: 65px;
-} 
-#main-header {
-background: #333;
-color: white;
-height: 65px;
+}
 
-width: 100%;
-left: 0;
-top: 0;
-position: fixed;
-}	
+#main-header {
+  background: #333;
+  color: white;
+  height: 65px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
 
 h1 {
   text-align: center;
@@ -28,6 +28,7 @@ main {
   padding: 20px;
 }
 
+/* Productos Section */
 .productos-seccion h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -36,22 +37,21 @@ main {
   padding-bottom: 10px;
 }
 
-
 .productos {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
-.producto {
-width: 250px;
-margin: 10px;
-padding: 10px;
-border: 1px solid #ccc;
-text-align: center;
-background-color: #ffffff; 
-} 
 
+.producto {
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #ffffff;
+}
 
 .producto img {
   width: 100px;
@@ -78,8 +78,6 @@ button.agregar-carrito:hover {
   background: #0056b3;
 }
 
-
-
 /* Carrito */
 .carrito-container {
   position: fixed;
@@ -93,15 +91,14 @@ button.agregar-carrito:hover {
   border-radius: 10px;
 }
 
-
 .carrito-icono {
-padding: 8px 10px;
-cursor: pointer;
-background-color: #f0f0f0;
-display: flex;
-align-items: center;
-justify-content: space-between;
-border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 #cantidad-carrito {
@@ -111,94 +108,152 @@ border-radius: 10px;
   font-weight: bold;
   margin-left: 10px;
 }
+
 .carrito-icono i {
-flex-grow: 0;
+  flex-grow: 0;
 }
 
 .espacio {
-flex-grow: 1;
-text-align: center;
-font-size: 1.2rem;
-padding: 0 10px;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 10px;
 }
-
-
 
 /* Cart panel */
 .carrito-panel {
-display: none;
-padding: 5px;
-max-height: 300px;
-overflow-y: auto;
-border: 1px solid #ccc;
-background-color: #f9f9f9;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
-font-size: 14px;
+  display: none;
+  padding: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
 }
+
 .carrito-panel.mostrar {
-display: block;
-width: 300px;
+  display: block;
+  width: 300px;
 }
 
 #lista-carrito {
-list-style: none;
-margin: 0;
-padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-
 #lista-carrito li.item-carrito {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 #lista-carrito .producto h5 {
-margin-top: 5px;
-}#lista-carrito .producto{
-border-radius: 4px;
+  margin-top: 5px;
+}
+
+#lista-carrito .producto {
+  border-radius: 4px;
 }
 
 #lista-carrito .aumentar,
 #lista-carrito .eliminar {
-background-color: #4caf50;
-color: white;
-border: none;
-border-radius: 4px;
-padding: 5px 5px;
-cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 5px;
+  cursor: pointer;
 }
 
 #lista-carrito .aumentar:hover {
-background-color: #45a049;
+  background-color: #45a049;
 }
 
 #lista-carrito .eliminar {
-background-color: #ff6666;
+  background-color: #ff6666;
 }
 
 #lista-carrito .eliminar:hover {
-background-color: #ff4444;
+  background-color: #ff4444;
 }
 
 button.agregar-carrito:hover {
-cursor: pointer;
-background-color: #a4ebeb;
+  cursor: pointer;
+  background-color: #a4ebeb;
 }
 
-
-
-
 /* Footer */
-
 footer {
-
-  bottom: 0;           /* Se coloca en la parte inferior */
-  width: 100%;         /* Asegura que ocupe todo el ancho */
+  bottom: 0; 
+  width: 100%;
   background-color: #333;
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* Ajustamos el tamaño del header y otros elementos */
+  #main-header {
+    height: 50px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .productos-seccion h2 {
+    font-size: 20px;
+  }
+
+  .producto {
+    width: 200px;
+  }
+
+  /* Ajustar la cantidad de columnas en la sección de productos */
+  .productos {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  /* Hacer que el carrito se ubique en la parte inferior */
+  .carrito-container {
+    top: auto;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reducción de tamaños para móviles más pequeños */
+  .producto {
+    width: 100%; /* Hacer los productos más grandes en pantallas pequeñas */
+    margin: 5px 0;
+  }
+
+  .carrito-container {
+    padding: 8px;
+  }
+
+  /* Reducir el tamaño del texto */
+  h1 {
+    font-size: 16px;
+  }
+
+  .productos-seccion h2 {
+    font-size: 18px;
+  }
+
+  .carrito-panel {
+    max-height: 200px;
+    width: 100%;
+  }
+
+  footer {
+    padding: 15px;
+  }
 }
