@@ -12,10 +12,16 @@ const productos2 = [
         descripcion: "Cargador portátil con capacidad de 30000 mAh, compatible con smartphones y tablets."
     },
     { 
-        nombre: "TOZO - 20000 mAh", 
+        nombre: "INIU - 20000 mAh",  
+        precio: 50, 
+        img: "https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg", 
+        descripcion: "Cargador portátil premium, diseño elegante y alta capacidad para dispositivos de alta carga."
+    },
+    { 
+        nombre: "LOVELEDI - 15000 mAh", 
         precio: 30, 
-        img: "https://m.media-amazon.com/images/I/61VU+ZfA3kL._AC_SX679_.jpg", 
-        descripcion: "Powerbank ultradelgado con carga rápida, diseño compacto y liviano de 20000 mAh. "
+        img: "https://m.media-amazon.com/images/I/61EUFa99OtL._AC_UF1000,1000_QL80_FMwebp_.jpg", 
+        descripcion: "Pack x2 Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
     },
     { 
         nombre: "INIU - 20000 mAh",  
@@ -49,6 +55,18 @@ const productos = [
         precio: 2, 
         img: "https://http2.mlstatic.com/D_NQ_NP_2X_734121-MEC74251876976_022024-F.webp", 
         descripcion:"Mgsystem Motor Reductor Motorreductor Biaxial Arduino Robot"
+    },
+    { 
+        nombre: "JIGA - 30000 mAh", 
+        precio: 35, 
+        img: "https://m.media-amazon.com/images/I/61YbQo+JqJL._AC_SX569_.jpg", 
+        descripcion: "Cargador portátil con capacidad de 30000 mAh, compatible con smartphones y tablets."
+    },
+    { 
+        nombre: "TOZO - 20000 mAh", 
+        precio: 30, 
+        img: "https://m.media-amazon.com/images/I/61VU+ZfA3kL._AC_SX679_.jpg", 
+        descripcion: "Powerbank ultradelgado con carga rápida, diseño compacto y liviano de 20000 mAh. "
     },
 
 ];
@@ -101,9 +119,25 @@ function cargarProductos2() {
 
 }
 
+
 document.getElementById("carrito-icono").addEventListener("click", () => {
+    const carritoPanel = document.getElementById("carrito-panel");
+    const espacio = document.querySelector(".espacio");
+
     carritoPanel.classList.toggle("mostrar");
+
+    // Verifica si el panel está visible
+    if (carritoPanel.classList.contains("mostrar")) {
+        // Mostrar la clase espacio
+        espacio.style.display = "inline";
+    } else {
+        // Ocultar la clase espacio en móviles nuevamente
+        if (window.innerWidth <= 768) {
+            espacio.style.display = "none";
+        }
+    }
 });
+
 
 function agregarAlCarrito(nombre, precio) {
     const producto = carrito.find(item => item.nombre === nombre);

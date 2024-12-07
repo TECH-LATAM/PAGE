@@ -16,7 +16,39 @@ body {
   left: 0;
   top: 0;
   position: fixed;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;    /* Centra verticalmente */
 }
+
+
+.typewriter {
+  width: 32ch;
+  animation: typing 6s steps(32) forwards, 
+             blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 32ch;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+}
+
+
 
 h1 {
   text-align: center;
@@ -36,21 +68,31 @@ main {
   border-bottom: 2px solid #000;
   padding-bottom: 10px;
 }
-
+/*
 .productos {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+}*/
+.productos{
+  display: grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+    
+  ) ;
+  gap:32;
 }
 
 .producto {
   width: 200px;
-  margin: 10px;
+  margin: 0px;
   padding: 10px;
   border: 1px solid #ccc;
   text-align: center;
   background-color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .producto img {
@@ -216,29 +258,41 @@ footer {
   }
 
   /* Ajustar la cantidad de columnas en la sección de productos */
-  .productos {
-    justify-content: flex-start;
-    gap: 15px;
+  .productos{
+    display: grid;
+    grid-template-columns:repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+      
+    ) ;
+    gap:32;
   }
 
-  /* Hacer que el carrito se ubique en la parte inferior */
-  .carrito-container {
-    top: auto;
-    bottom: 20px;
-  }
+
 }
 
 @media (max-width: 480px) {
   /* Reducción de tamaños para móviles más pequeños */
   .producto {
-    width: 100%; /* Hacer los productos más grandes en pantallas pequeñas */
-    margin: 5px 0;
+    width: 150px;
   }
 
-  .carrito-container {
-    padding: 8px;
+  /* Ajustar la cantidad de columnas en la sección de productos */
+  .productos{
+    display: grid;
+    grid-template-columns:repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+      
+    ) ;
+    gap:32;
+  }
+  .typewriter {
+    font-size: 1em;
   }
 
+
+  
   /* Reducir el tamaño del texto */
   h1 {
     font-size: 16px;
@@ -248,12 +302,16 @@ footer {
     font-size: 18px;
   }
 
-  .carrito-panel {
-    max-height: 200px;
-    width: 100%;
-  }
+
 
   footer {
     padding: 15px;
   }
+}
+
+/* Ocultar la clase 'espacio' en pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+.espacio {
+    display: none;
+}
 }
