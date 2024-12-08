@@ -9,6 +9,14 @@ body {
   padding-top: 65px;
   overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
 }
+html {
+  box-sizing: border-box;
+  overflow-x: hidden; /* Asegurar que no haya desbordamiento */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; /* Ajustar box-sizing a todos los elementos */
+}
   
   #main-header {
     background: #333;
