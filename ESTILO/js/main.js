@@ -6,12 +6,6 @@ const productos2 = [
         descripcion: "Pack x2 Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
     },
     { 
-        nombre: "JIGA - 30000 mAh", 
-        precio: 35, 
-        img: "https://m.media-amazon.com/images/I/61YbQo+JqJL._AC_SX569_.jpg", 
-        descripcion: "Cargador portátil con capacidad de 30000 mAh, compatible con smartphones y tablets."
-    },
-    { 
         nombre: "INIU - 20000 mAh",  
         precio: 50, 
         img: "https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg", 
@@ -22,12 +16,6 @@ const productos2 = [
         precio: 30, 
         img: "https://m.media-amazon.com/images/I/61EUFa99OtL._AC_UF1000,1000_QL80_FMwebp_.jpg", 
         descripcion: "Pack x2 Batería externa de alta capacidad, ideal para cargar varios dispositivos a la vez."
-    },
-    { 
-        nombre: "INIU - 20000 mAh",  
-        precio: 50, 
-        img: "https://m.media-amazon.com/images/I/51aZGPrKBbL._AC_SX679_.jpg", 
-        descripcion: "Cargador portátil premium, diseño elegante y alta capacidad para dispositivos de alta carga."
     },
 ];
 
@@ -86,7 +74,7 @@ function cargarProductos() {
             <img src="${producto.img}" alt="${producto.nombre}">
             <h5>${producto.nombre}</h5>
             <p>Precio: $${producto.precio.toFixed(2)}</p>
-            <p><strong>Descripción:</strong> ${producto.descripcion}</p>
+            <p id="descripcion-producto"><strong>Descripción:</strong> ${producto.descripcion}</p>
             <button class="agregar-carrito" data-nombre="${producto.nombre}" data-precio="${producto.precio}">Añadir al carrito</button>
         `;
         contenedorProductos.appendChild(div);
@@ -111,7 +99,7 @@ function cargarProductos2() {
             <img src="${producto2.img}" alt="${producto2.nombre}">
             <h5>${producto2.nombre}</h5>
             <p>Precio: $${producto2.precio.toFixed(2)}</p>
-            <p><strong>Descripción:</strong> ${producto2.descripcion}</p>
+            <p id="descripcion-producto"><strong>Descripción:</strong> ${producto2.descripcion}</p>
             <button class="agregar-carrito" data-nombre="${producto2.nombre}" data-precio="${producto2.precio}">Proximamente</button>
         `;
         contenedorProductos2.appendChild(div);
