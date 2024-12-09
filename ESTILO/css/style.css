@@ -96,7 +96,7 @@ html {
   }*/
   
   .producto {
-    max-width: 30%;
+    width: 30%;
     margin: 0px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -302,7 +302,7 @@ html {
   @media (max-width: 480px) {
     /* Reducción de tamaños para móviles más pequeños */
     .producto {
-      max-width: 39%;
+      width: 39%;
     }
   
     /* Ajustar la cantidad de columnas en la sección de productos */
