@@ -10,12 +10,12 @@ body {
   overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
 }
 html {
-    box-sizing: border-box;
-    overflow-x: hidden; /* Asegurar que no haya desbordamiento */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Asegurar que no haya desbordamiento */
 }
 
 *, *::before, *::after {
-    box-sizing: inherit; /* Ajustar box-sizing a todos los elementos */
+  box-sizing: inherit; /* Ajustar box-sizing a todos los elementos */
 }
   
   #main-header {
@@ -29,6 +29,7 @@ html {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center;    /* Centra verticalmente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para profundidad */
   }
   
 
@@ -96,7 +97,7 @@ html {
   }*/
   
   .producto {
-    max-width: 30%;
+    width: 30%;
     margin: 0px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -116,7 +117,7 @@ html {
   }
   
   #descripcion-producto{
-    height: 30px;
+    height: 35px;
   }
   
   .producto p {
@@ -302,7 +303,7 @@ html {
   @media (max-width: 480px) {
     /* Reducción de tamaños para móviles más pequeños */
     .producto {
-      max-width: 39%;
+      width: 39%;
     }
   
     /* Ajustar la cantidad de columnas en la sección de productos */
@@ -315,19 +316,12 @@ html {
       ) ;
       gap:32;
     }*/
-
-
     .productos {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 20px;
       justify-content: center;
     }
-    #descripcion-producto{
-      height: 75px;
-    }
-
-    
     .typewriter {
       font-size: 1em;
     }
@@ -342,7 +336,6 @@ html {
     .productos-seccion h2 {
       font-size: 18px;
     }
-    
   
 
   

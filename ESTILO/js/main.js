@@ -1,8 +1,3 @@
-
-
-
-
-
 async function cargarProductosDesdeGoogleSheets() {
     const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS7SAlwFzHid3f8eFdy9sWxQ0ODQXfZcKChxDh4StatB9NEuCKtILjvCFwWRstBTgQ-wZrDt-ACRpKo/pubhtml?gid=0&single=true";
 
@@ -100,10 +95,31 @@ function mostrarElectronicos(productos) {
     });
 }
 
+
 const carrito = [];
-const listaCarrito = document.getElementById("listaCarrito");
-const totalDisplay = document.getElementById("totalDisplay");
-const cantidadCarrito = document.getElementById("cantidadCarrito");
+const listaCarrito = document.getElementById("lista-carrito");
+const carritoPanel = document.getElementById("carrito-panel");
+const cantidadCarrito = document.getElementById("cantidad-carrito");
+const totalDisplay = document.getElementById("total");
+
+document.getElementById("carrito-icono").addEventListener("click", () => {
+    const carritoPanel = document.getElementById("carrito-panel");
+    const espacio = document.querySelector(".espacio");
+
+    carritoPanel.classList.toggle("mostrar");
+
+    // Verifica si el panel está visible
+    if (carritoPanel.classList.contains("mostrar")) {
+        // Mostrar la clase espacio
+        espacio.style.display = "inline";
+    } else {
+        // Ocultar la clase espacio en móviles nuevamente
+        if (window.innerWidth <= 768) {
+            espacio.style.display = "none";
+        }
+    }
+});
+
 
 function agregarAlCarrito(nombre, precio) {
     const producto = carrito.find(item => item.nombre === nombre);
@@ -120,14 +136,13 @@ function actualizarCarrito() {
 
     carrito.forEach(item => {
         const li = document.createElement("li");
-        li.classList.add("item-carrito");
+        li.classList.add("item-carrito"); // Clase para estilos específicos
         li.innerHTML = `
             <div class="producto">
-                <h5>${item.nombre}</h5>
-                <p>${item.cantidad} x $${item.precio.toFixed(2)}</p>
+                <h5>${item.nombre}</h5><p1>${item.cantidad} x $${item.precio}</p1>
             </div>
             <div>
-                <button class="aumentar" onclick="aumentarCantidad('${item.nombre}')">Agregar</button>
+                <button class="aumentar" onclick="aumentarCantidad('${item.nombre}')">  Agregar</button>
                 <button class="eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Eliminar</button>
             </div>
         `;
@@ -138,7 +153,6 @@ function actualizarCarrito() {
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
     cantidadCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
-
 function aumentarCantidad(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
     if (producto) {
@@ -146,6 +160,7 @@ function aumentarCantidad(nombre) {
     }
     actualizarCarrito();
 }
+
 
 function eliminarDelCarrito(nombre) {
     const producto = carrito.find(item => item.nombre === nombre);
@@ -158,7 +173,7 @@ function eliminarDelCarrito(nombre) {
 }
 
 function enviarWhatsApp() {
-    const numero = "+593993898590";
+    const numero = "+593963311000";
     let mensaje = "Carrito de compras:\n\n";
     carrito.forEach(item => {
         mensaje += `${item.nombre} - ${item.cantidad} x $${item.precio.toFixed(2)}\n`;
@@ -170,4 +185,3 @@ function enviarWhatsApp() {
 }
 
 cargarProductosDesdeGoogleSheets();
-
